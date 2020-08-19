@@ -1,4 +1,5 @@
 #usr: root, pwd: root
+#todo: path
 
 /home/acarter/qemu-5.0.0/x86_64-softmmu/qemu-system-x86_64 \
 	-enable-kvm \
