@@ -8,3 +8,4 @@
 	-chardev socket,id=char0,path=/tmp/vhostqemu \
 	-device vhost-user-fs-pci,queue-size=1024,chardev=char0,tag=myfs \
 	-m 4G -object memory-backend-file,id=mem,size=4G,mem-path=/dev/shm,share=on -numa node,memdev=mem \
+	-nic user,model=virtio-net-pci
