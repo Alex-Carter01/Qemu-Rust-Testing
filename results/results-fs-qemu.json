@@ -1,4 +1,3 @@
-fio: ENOSPC on laying out file, stopping
 {
   "fio version" : "fio-3.16",
   "timestamp" : 1597927566,
