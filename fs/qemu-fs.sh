@@ -17,13 +17,13 @@ show_help () {
 	echo "\t-d\tPath to a virtiofs daemon binary. Defaults to ${virtiofs_daemon_bin}"
 	echo "\t-c\tPath to a cloud-init image. If not provided, no cloud-init image will be used"
 	echo "\t-s\tPath to the folder on the host to be shared. Defaults to ${shared_folder}"
-	echo "\t-v\tType of virtiofs daemon to use. Can be either QEMU or CH (For Cloud-Hypervisor)"
+	echo "\t-v\tType of virtio daemon to use. Can be either QEMU or CH (For Cloud-Hypervisor)"
 }
 
 # A POSIX variable
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
-while getopts "h?q:d:s:v:" opt; do
+while getopts "h?q:d:s:v:c:" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -46,9 +46,12 @@ shift $((OPTIND-1))
 
 [ "${1:-}" = "--" ] && shift
 
-boot_img=${1}
+if [ "$#" != "1" ]; then
+	show_help
+	exit 0
+fi
 
-echo "qemu_bin_path=${qemu_bin_path} ch_bin_path=${ch_bin_path}, boot_img=${boot_img}, shared_folder=${shared_folder}.  Leftovers: $@"
+boot_img=${1}
 
 vhost_socket=$(mktemp)
 
