@@ -8,5 +8,3 @@ See the sides I used [here](https://github.com/Alex-Carter01/Qemu-Rust-Testing/b
 [Demo Video - Vhost-user Virtiofsd, QEMU vs Cloud Hypervisor](https://drive.google.com/file/d/1S5BYdOAxhJexzCDJCyywcTTR5GraMJQG/view?usp=sharing)
 
 Image used: [Ubuntu Cloud Focal Release](https://cloud-images.ubuntu.com/releases/focal/release/)
-
-## After leaving IBM, it appears that the above video link for presentation is no longer available, I am working to re-upload it to make it available
